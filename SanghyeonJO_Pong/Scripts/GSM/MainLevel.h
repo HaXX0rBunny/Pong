@@ -10,7 +10,10 @@ namespace Levels
 		void Exit() override;
 	public: 
 		int counter=0;
+		int counter2 = 0;
 		GameObject* player;
 		GameObject* planet;
+		GameObject* ping[2];
+		GameObject* Wall;
 	};
 }

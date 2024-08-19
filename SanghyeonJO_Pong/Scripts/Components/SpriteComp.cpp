@@ -29,7 +29,8 @@ void SpriteComp::Update()
 
 	//set renderer mod
 	//AEGfxSetRenderMod(AE_GFX_RM_COLOR);
-	AEGfxSetBackgroundColor(0.0f, 0.0f, 0.0f);
+	
+	(0.0f, 0.0f, 0.0f);
 	AEGfxSetRenderMode(AE_GFX_RM_TEXTURE);
 	//set color to multiply
 	//AEGfxSetColorToMultiply(mColor.r / 255.f, mColor.g / 255.f, mColor.b / 255.f, 1);

@@ -12,22 +12,27 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scripts\ComponentManager\EngineManager.cpp" />
+    <ClCompile Include="Scripts\ComponentManager\Functors.cpp" />
     <ClCompile Include="Scripts\ComponentManager\GraphicsManager.cpp" />
     <ClCompile Include="Scripts\ComponentManager\LogicManager.cpp" />
     <ClCompile Include="Scripts\Components\AudioComponent.cpp" />
+    <ClCompile Include="Scripts\Components\CollisonComp.cpp" />
     <ClCompile Include="Scripts\Components\EngineComponent.cpp" />
     <ClCompile Include="Scripts\Components\GraphicsComponent.cpp" />
     <ClCompile Include="Scripts\Components\LogicComponent.cpp" />
     <ClCompile Include="Scripts\Components\PlayerComp.cpp" />
     <ClCompile Include="Scripts\Components\RigidbodyComp.cpp" />
     <ClCompile Include="Scripts\Components\SpriteComp.cpp" />
+    <ClCompile Include="Scripts\Components\CollisonComp.h" />
     <ClCompile Include="Scripts\Components\TransformComp.cpp" />
     <ClCompile Include="Scripts\GameObject\GameObject.cpp" />
     <ClCompile Include="Scripts\GameObject\GOManager.cpp" />
+    <ClCompile Include="Scripts\GSM\FailLevel.cpp" />
     <ClCompile Include="Scripts\GSM\GameStateManager.cpp" />
     <ClCompile Include="Scripts\GSM\GoalLevel.cpp" />
     <ClCompile Include="Scripts\GSM\MainLevel.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scripts\GSM\MainMenu.cpp" />
     <ClCompile Include="Scripts\ResourceManager\MusicResource.cpp" />
     <ClCompile Include="Scripts\ResourceManager\ResourceManager.cpp" />
     <ClCompile Include="Scripts\ResourceManager\TextResource.cpp" />
@@ -35,6 +40,8 @@
     <ClCompile Include="Scripts\Serializer\Serializer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Scripts\GSM\FailLevel.h" />
+    <ClInclude Include="Scripts\GSM\Score.h" />
     <ClInclude Include="Scripts\ComponentManager\EngineManager.h" />
     <ClInclude Include="Scripts\ComponentManager\EventManger.h" />
     <ClInclude Include="Scripts\ComponentManager\GraphicsManager.h" />
@@ -69,6 +76,7 @@
     <ClInclude Include="Scripts\GSM\GameStateManager.h" />
     <ClInclude Include="Scripts\GSM\GoalLevel.h" />
     <ClInclude Include="Scripts\GSM\MainLevel.h" />
+    <ClInclude Include="Scripts\GSM\MainMenu.h" />
     <ClInclude Include="Scripts\MManager\MessageManager.h" />
     <ClInclude Include="Scripts\ResourceManager\MusicResource.h" />
     <ClInclude Include="Scripts\ResourceManager\Resource.h" />

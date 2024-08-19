@@ -12,10 +12,10 @@ Registry::Registry()
     //Register All the functions
 
     rttiMap.insert({ TransformComp::GetType(), TransformComp::CreateTransformComp});
-    //rttiMap.insert({ PlayerComp::GetType(), PlayerComp::CreatePlayerComp });
-    //rttiMap.insert({ RigidbodyComp::GetType(), RigidbodyComp::CreateRigidbodyComp });
-    //rttiMap.insert({ SpriteComp::GetType(), SpriteComp::CreateSpriteComp });
-    //rttiMap.insert({ AudioComp::GetType(), AudioComp::CreateAudioComp });
+    rttiMap.insert({ PlayerComp::GetType(), PlayerComp::CreatePlayerComp });
+    rttiMap.insert({ RigidbodyComp::GetType(), RigidbodyComp::CreateRigidbodyComp });
+    rttiMap.insert({ SpriteComp::GetType(), SpriteComp::CreateSpriteComp });
+    rttiMap.insert({ AudioComp::GetType(), AudioComp::CreateAudioComp });
     
 
 //    rttiMap.insert(std::pair<std::string, BaseRTTI * (*)()>("TransformComp", TransformComp::CreateTransformComp));

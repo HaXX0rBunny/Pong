@@ -14,6 +14,7 @@
 #include "../GameObject/GOManager.h"
 void Levels::MainLevel::Init()
 {
+   
  
     player = new GameObject();
     TransformComp* playerTransform = new TransformComp(player);
@@ -21,7 +22,18 @@ void Levels::MainLevel::Init()
     RigidbodyComp* playerRigidBody = new RigidbodyComp(player);
     AudioComp* playerAudio = new AudioComp(player);
     PlayerComp* playerMove = new PlayerComp(player);
+    //ping[0] = new GameObject();
+    //ping[1] = new GameObject();
+    //Wall = new GameObject();
+    //TransformComp* PingTransform = new TransformComp(ping[0]);
+    //SpriteComp* PingSprite = new SpriteComp(ping[0]);
+    //TransformComp* Ping2Transform = new TransformComp(ping[1]);
+    //SpriteComp* Ping2Sprite = new SpriteComp(ping[1]);
+    //ping[0]->AddComponent(PingTransform);
+    //ping[0]->AddComponent(PingTransform);
+    //ping[0]->AddComponent(PingTransform);
 
+    //ping[1]->AddComponent(Ping2Transform);
 
     ResourceManager* RsrMgr = ResourceManager::Instance();
     TextResource* TextRsr = RsrMgr->Get<TextResource>("../../Assets/ame.png");
@@ -39,8 +51,10 @@ void Levels::MainLevel::Init()
     playerTransform->SetPos({ 100, 100 });
     playerTransform->SetScale({ 200, 200 });
 
-    
     planet = new GameObject();
+    
+
+
     TransformComp* planetTransform = new TransformComp(planet);
     SpriteComp* planetSprite = new SpriteComp(planet);
 
@@ -120,5 +134,6 @@ void Levels::MainLevel::Exit()
 
 	delete player;
 	delete planet;
+   // ResourceManager::Instance()->Clear();
 
 }

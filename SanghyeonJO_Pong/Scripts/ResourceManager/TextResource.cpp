@@ -15,7 +15,7 @@ void TextResource::Load(const std::string& filename)
 
 void TextResource::Unload()
 {
-    if (data)
+    if (data!=nullptr)
     {
         AEGfxTextureUnload(static_cast<AEGfxTexture*> (data));
         data = nullptr;

@@ -3,7 +3,7 @@
 #include <string>	
 #include <list>
 #include <map>
-
+#include <vector>
 struct Event
 {
 	Event();
@@ -25,24 +25,21 @@ struct LocalEvent : public Event
 
 class EventManager
 {
-	//Make singleton
-	
-	//A container for all my events*
-
-	//A container to have which entities are registered to which events
-	//map of (event, container of entities*)
-
-	//Interface:
-	//Add an event (event*) this are pointers to dynamic memory, called as the following: AddEvent(new Event);
-	// 
-	// templated fn:
-	//		Register entities to a certain event TYPE
-	//		Unregister entities to a certain event TYPE
-	//
-	// DispatchAllEvents
-	//
-
-	//delete undispatched events if any on destructor
+    static EventManager* Instance_;
+    EventManager() = default;
+    std::vector<EventManager*> Component;
+    ~EventManager();
+public:
+    static EventManager* Instance() {
+        if (Instance_ == nullptr)
+            Instance_ = new EventManager;
+        return Instance_;
+    }
+    static void clear();
+    EventManager* GetComponent(const std::string& str) const;
+    void AddComponent(EventManager* component);
+    void RemoveComp(EventManager* component);
+    void Update();
 
 
 };
