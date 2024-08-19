@@ -11,7 +11,79 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scripts\ComponentManager\EngineManager.cpp" />
+    <ClCompile Include="Scripts\ComponentManager\GraphicsManager.cpp" />
+    <ClCompile Include="Scripts\ComponentManager\LogicManager.cpp" />
+    <ClCompile Include="Scripts\Components\AudioComponent.cpp" />
+    <ClCompile Include="Scripts\Components\EngineComponent.cpp" />
+    <ClCompile Include="Scripts\Components\GraphicsComponent.cpp" />
+    <ClCompile Include="Scripts\Components\LogicComponent.cpp" />
+    <ClCompile Include="Scripts\Components\PlayerComp.cpp" />
+    <ClCompile Include="Scripts\Components\RigidbodyComp.cpp" />
+    <ClCompile Include="Scripts\Components\SpriteComp.cpp" />
+    <ClCompile Include="Scripts\Components\TransformComp.cpp" />
+    <ClCompile Include="Scripts\GameObject\GameObject.cpp" />
+    <ClCompile Include="Scripts\GameObject\GOManager.cpp" />
+    <ClCompile Include="Scripts\GSM\GameStateManager.cpp" />
+    <ClCompile Include="Scripts\GSM\GoalLevel.cpp" />
+    <ClCompile Include="Scripts\GSM\MainLevel.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scripts\ResourceManager\MusicResource.cpp" />
+    <ClCompile Include="Scripts\ResourceManager\ResourceManager.cpp" />
+    <ClCompile Include="Scripts\ResourceManager\TextResource.cpp" />
+    <ClCompile Include="Scripts\RTTI\Registry.cpp" />
+    <ClCompile Include="Scripts\Serializer\Serializer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scripts\ComponentManager\EngineManager.h" />
+    <ClInclude Include="Scripts\ComponentManager\EventManger.h" />
+    <ClInclude Include="Scripts\ComponentManager\GraphicsManager.h" />
+    <ClInclude Include="Scripts\ComponentManager\LogicManager.h" />
+    <ClInclude Include="Scripts\Components\AudioComponent.h" />
+    <ClInclude Include="Scripts\Components\BaseComponent.h" />
+    <ClInclude Include="Scripts\Components\EngineComponent.h" />
+    <ClInclude Include="Scripts\Components\GraphicsComponent.h" />
+    <ClInclude Include="Scripts\Components\LogicComponent.h" />
+    <ClInclude Include="Scripts\Components\PlayerComp.h" />
+    <ClInclude Include="Scripts\Components\RigidbodyComp.h" />
+    <ClInclude Include="Scripts\Components\SpriteComp.h" />
+    <ClInclude Include="Scripts\Components\TransformComp.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEAudio.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEEngine.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEExport.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEFrameRateController.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEGraphics.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEInput.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AELineSegment2.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEMath.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEMtx33.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AESystem.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AETypes.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEUtil.h" />
+    <ClInclude Include="Extern\AlphaEngine\include\AEVec2.h" />
+    <ClInclude Include="Extern\json\json.hpp" />
+    <ClInclude Include="Extern\json\json_fwd.hpp" />
+    <ClInclude Include="Scripts\GameObject\GameObject.h" />
+    <ClInclude Include="Scripts\GameObject\GOManager.h" />
+    <ClInclude Include="Scripts\GSM\BaseLevel.h" />
+    <ClInclude Include="Scripts\GSM\GameStateManager.h" />
+    <ClInclude Include="Scripts\GSM\GoalLevel.h" />
+    <ClInclude Include="Scripts\GSM\MainLevel.h" />
+    <ClInclude Include="Scripts\MManager\MessageManager.h" />
+    <ClInclude Include="Scripts\ResourceManager\MusicResource.h" />
+    <ClInclude Include="Scripts\ResourceManager\Resource.h" />
+    <ClInclude Include="Scripts\ResourceManager\ResourceManager.h" />
+    <ClInclude Include="Scripts\ResourceManager\TextResource.h" />
+    <ClInclude Include="Scripts\RTTI\BaseRTTI.h" />
+    <ClInclude Include="Scripts\RTTI\Registry.h" />
+    <ClInclude Include="Scripts\Serializer\Serializer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\GameObject\GameObject.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Scripts\RTTI\RTTI.txt" />
+    <Text Include="Scripts\Serializer\json.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -51,15 +123,16 @@
     <LibraryPath>$(SolutionDir)Extern\AlphaEngine\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)\.tmp\$(Configuration)-$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)Extern\AlphaEngine\include;$(IncludePath)</IncludePath>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath)</ExternalIncludePath>
+    <IncludePath>$(SolutionDir)Extern\AlphaEngine\include;$(SolutionDir)Scripts\;$(IncludePath)</IncludePath>
+    <ExternalIncludePath>$(SolutionDir)Extern\json;$(SolutionDir)Extern\AlphaEngine\inclued</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <ReferencePath>$(VC_ReferencesPath_x64);</ReferencePath>
     <LibraryPath>$(SolutionDir)Extern\AlphaEngine\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)\.tmp\$(Configuration)-$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)Extern\AlphaEngine\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Extern\AlphaEngine\include;$(SolutionDir)Scripts\;$(IncludePath)</IncludePath>
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
