@@ -77,7 +77,6 @@
     <ClInclude Include="Scripts\GSM\GoalLevel.h" />
     <ClInclude Include="Scripts\GSM\MainLevel.h" />
     <ClInclude Include="Scripts\GSM\MainMenu.h" />
-    <ClInclude Include="Scripts\MManager\MessageManager.h" />
     <ClInclude Include="Scripts\ResourceManager\MusicResource.h" />
     <ClInclude Include="Scripts\ResourceManager\Resource.h" />
     <ClInclude Include="Scripts\ResourceManager\ResourceManager.h" />
@@ -92,6 +91,18 @@
   <ItemGroup>
     <Text Include="Scripts\RTTI\RTTI.txt" />
     <Text Include="Scripts\Serializer\json.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\ame.png" />
+    <Image Include="Assets\hos.png" />
+    <Image Include="Assets\PlanetTexture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\bouken.mp3" />
+    <Media Include="Assets\ore.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\liberation-mono.ttf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

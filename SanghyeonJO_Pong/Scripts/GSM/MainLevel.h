@@ -13,7 +13,7 @@ namespace Levels
 		int counter2 = 0;
 		GameObject* player;
 		GameObject* planet;
-		GameObject* ping[2];
+		GameObject* player_m;
 		GameObject* Wall;
 	};
 }

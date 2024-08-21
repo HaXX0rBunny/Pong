@@ -20,8 +20,13 @@ void Levels::MainLevel::Init()
     TransformComp* playerTransform = new TransformComp(player);
     SpriteComp* playerSprite = new SpriteComp(player);
     RigidbodyComp* playerRigidBody = new RigidbodyComp(player);
-    AudioComp* playerAudio = new AudioComp(player);
     PlayerComp* playerMove = new PlayerComp(player);
+
+    player_m = new GameObject();
+    TransformComp* playerTransform_m = new TransformComp(player_m);
+    SpriteComp* playerSprite_m = new SpriteComp(player_m);
+    RigidbodyComp* playerRigidBody_m = new RigidbodyComp(player_m);
+    PlayerComp* playerMove_m = new PlayerComp(player_m);
     //ping[0] = new GameObject();
     //ping[1] = new GameObject();
     //Wall = new GameObject();
@@ -29,27 +34,29 @@ void Levels::MainLevel::Init()
     //SpriteComp* PingSprite = new SpriteComp(ping[0]);
     //TransformComp* Ping2Transform = new TransformComp(ping[1]);
     //SpriteComp* Ping2Sprite = new SpriteComp(ping[1]);
-    //ping[0]->AddComponent(PingTransform);
-    //ping[0]->AddComponent(PingTransform);
-    //ping[0]->AddComponent(PingTransform);
-
-    //ping[1]->AddComponent(Ping2Transform);
-
-    ResourceManager* RsrMgr = ResourceManager::Instance();
-    TextResource* TextRsr = RsrMgr->Get<TextResource>("../../Assets/ame.png");
-    TextResource* planetTextRsr = RsrMgr->Get<TextResource>("../../Assets/hos.png");
-    MusicResource* AudioRsr = RsrMgr->Get<MusicResource>("../../Assets/bouken.mp3");
-
-    playerSprite->SetTexture(static_cast<AEGfxTexture*>(TextRsr->GetData()));
-    playerAudio->SetAudio(static_cast<AEAudio*>(AudioRsr->GetData()));
-
     player->AddComponent(playerTransform);
     player->AddComponent(playerSprite);
     player->AddComponent(playerRigidBody);
-    player->AddComponent(playerAudio);
     player->AddComponent(playerMove);
-    playerTransform->SetPos({ 100, 100 });
-    playerTransform->SetScale({ 200, 200 });
+
+    player_m->AddComponent(playerTransform_m);
+    player_m->AddComponent(playerSprite_m);
+    player_m->AddComponent(playerRigidBody_m);
+    player_m->AddComponent(playerMove_m);
+    playerTransform_m->SetPos({ 775, 0 });
+    playerTransform_m->SetScale({ 20, 200 });
+    playerTransform->SetPos({ -775, 0 });
+    playerTransform->SetScale({ 20, 200 });
+
+    ResourceManager* RsrMgr = ResourceManager::Instance();
+    //TextResource* TextRsr = RsrMgr->Get<TextResource>("../../Assets/ame.png");
+    //TextResource* planetTextRsr = RsrMgr->Get<TextResource>("../../Assets/hos.png");
+    //MusicResource* AudioRsr = RsrMgr->Get<MusicResource>("../../Assets/bouken.mp3");
+
+    //playerSprite->SetTexture(static_cast<AEGfxTexture*>(TextRsr->GetData()));
+    //playerAudio->SetAudio(static_cast<AEAudio*>(AudioRsr->GetData()));
+
+
 
     planet = new GameObject();
     
@@ -57,15 +64,15 @@ void Levels::MainLevel::Init()
 
     TransformComp* planetTransform = new TransformComp(planet);
     SpriteComp* planetSprite = new SpriteComp(planet);
-
-    planetSprite->SetTexture(static_cast<AEGfxTexture*>(planetTextRsr->GetData()));
+    //planetSprite->SetTexture(static_cast<AEGfxTexture*>(planetTextRsr->GetData()));
 
     planet->AddComponent(planetTransform);
     planet->AddComponent(planetSprite);
 //    RsrMgr.Clear();
-
-    Serializer *s= Serializer::Instance();
-    s->LoadLevel("test.json");
+    planetTransform->SetPos({ 0, 0 });
+    planetTransform->SetScale({ 40, 40 });
+    //Serializer *s= Serializer::Instance();
+    //s->LoadLevel("test.json");
    
     std::cout << "Main level Init" << std::endl;
     
@@ -77,21 +84,21 @@ void Levels::MainLevel::Update()
     TransformComp* trs = planet->GetComponent<TransformComp>();
     SpriteComp* spr = planet->GetComponent<SpriteComp>();
     AudioComp* audio = player->GetComponent<AudioComp>();
-    
-    if (trs)
-    {
-        trs->SetPos({ trs->GetPos().x +1, trs->GetPos().y });
-        std::cout << trs->GetPos().x << "\n";
-        if (trs->GetPos().x > 800)
-            trs->SetPos({ -800, 0 });
-        if (counter % 10 == 0)
-        {
-            trs->SetRot(trs->GetRot() + 0.5f);
-        }
-        trs->SetScale({ trs->Getscale().x * 1.01f, trs->Getscale().y * 1.01f });
-          
-    }
     AEGfxMeshStart();
+    //if (trs)
+    //{
+    //    trs->SetPos({ trs->GetPos().x +1, trs->GetPos().y });
+    //    std::cout << trs->GetPos().x << "\n";
+    //    if (trs->GetPos().x > 800)
+    //        trs->SetPos({ -800, 0 });
+    //    if (counter % 10 == 0)
+    //    {
+    //        trs->SetRot(trs->GetRot() + 0.5f);
+    //    }
+    //    trs->SetScale({ trs->Getscale().x * 1.01f, trs->Getscale().y * 1.01f });
+    //      
+    //}
+
    /* if (spr)
     {
         SpriteComp::Color& c = spr->Getcolor();
@@ -109,12 +116,7 @@ void Levels::MainLevel::Update()
         }
     }*/
 
-    if (!audio->IsPlaying())
-    {
- 
-        audio->Play();
-        
-    }
+
 	//If goal was reached changed level
 
 	//counter++;
@@ -132,8 +134,8 @@ void Levels::MainLevel::Exit()
     Serializer* s = Serializer::Instance();
     s->SaveLevel("test.json");
 
-	delete player;
-	delete planet;
+    GOManager::Instance()->Clear();
+
    // ResourceManager::Instance()->Clear();
 
 }

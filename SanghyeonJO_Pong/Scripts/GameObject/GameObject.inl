@@ -7,8 +7,7 @@ template < typename T>
 inline void GameObject::AddComponent(T* component)
 {
 	Component[component->GetType()] = component;
-	component->own = this;
-	
+	component->own = this;	
 }
 template<typename T>
 inline T* GameObject::GetComponent() const

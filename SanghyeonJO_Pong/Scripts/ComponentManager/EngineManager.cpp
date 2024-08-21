@@ -3,13 +3,20 @@ EngineManager* EngineManager::Instance_ = nullptr;
 
 EngineManager::~EngineManager()
 {
-    clear();
+    // 컴포넌트들을 해제합니다.
+    for (auto component : Component) {
+        delete component;
+    }
+    Component.clear();
 }
 
 void EngineManager::clear()
 {
-    delete Instance_;
-    Instance_ = nullptr;
+
+    if (Instance_) {
+        delete Instance_;
+        Instance_ = nullptr;
+    }
 }
 
 EngineComponent* EngineManager::GetComponent(const std::string& str) const

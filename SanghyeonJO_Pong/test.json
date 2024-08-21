@@ -1,0 +1,72 @@
+[
+  {
+    "object": 0,
+    "Components": [
+      null,
+      null,
+      {
+        "Type": "SpriteComp"
+      },
+      {
+        "Type": "TransformComp",
+        "CompData": {
+          "Pos": [
+            -775.0,
+            1466.0341796875
+          ],
+          "Sca": [
+            20.0,
+            200.0
+          ],
+          "Rot": 0.0
+        }
+      }
+    ]
+  },
+  {
+    "object": 1,
+    "Components": [
+      null,
+      null,
+      {
+        "Type": "SpriteComp"
+      },
+      {
+        "Type": "TransformComp",
+        "CompData": {
+          "Pos": [
+            775.0,
+            1466.0341796875
+          ],
+          "Sca": [
+            20.0,
+            200.0
+          ],
+          "Rot": 0.0
+        }
+      }
+    ]
+  },
+  {
+    "object": 2,
+    "Components": [
+      {
+        "Type": "SpriteComp"
+      },
+      {
+        "Type": "TransformComp",
+        "CompData": {
+          "Pos": [
+            0.0,
+            0.0
+          ],
+          "Sca": [
+            40.0,
+            40.0
+          ],
+          "Rot": 0.0
+        }
+      }
+    ]
+  }
+]
