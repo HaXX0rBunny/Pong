@@ -1,14 +1,14 @@
 #pragma once
 #include "../Components/LogicComponent.h"
 
-class PlayerComp : public LogicComponent
+class PlayerComp2: public LogicComponent
 {
 	float moveSpeed;
 	float spin;
-	int worldLimit;
+	float worldLimit;
 public:
-	PlayerComp(GameObject* owner);
-	~PlayerComp();
+	PlayerComp2(GameObject* owner);
+	~PlayerComp2();
 	void Update() override;
 	static std::string GetType()
 	{

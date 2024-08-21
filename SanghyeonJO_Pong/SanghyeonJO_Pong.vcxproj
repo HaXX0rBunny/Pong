@@ -16,14 +16,14 @@
     <ClCompile Include="Scripts\ComponentManager\GraphicsManager.cpp" />
     <ClCompile Include="Scripts\ComponentManager\LogicManager.cpp" />
     <ClCompile Include="Scripts\Components\AudioComponent.cpp" />
-    <ClCompile Include="Scripts\Components\CollisonComp.cpp" />
+    <ClCompile Include="Scripts\Components\CollisionComp.cpp" />
     <ClCompile Include="Scripts\Components\EngineComponent.cpp" />
     <ClCompile Include="Scripts\Components\GraphicsComponent.cpp" />
     <ClCompile Include="Scripts\Components\LogicComponent.cpp" />
     <ClCompile Include="Scripts\Components\PlayerComp.cpp" />
     <ClCompile Include="Scripts\Components\RigidbodyComp.cpp" />
     <ClCompile Include="Scripts\Components\SpriteComp.cpp" />
-    <ClCompile Include="Scripts\Components\CollisonComp.h" />
+    <ClCompile Include="Scripts\Components\CollisionComp.h" />
     <ClCompile Include="Scripts\Components\TransformComp.cpp" />
     <ClCompile Include="Scripts\GameObject\GameObject.cpp" />
     <ClCompile Include="Scripts\GameObject\GOManager.cpp" />
@@ -33,6 +33,7 @@
     <ClCompile Include="Scripts\GSM\MainLevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scripts\GSM\MainMenu.cpp" />
+    <ClCompile Include="Scripts\Components\PlayerComp2.cpp" />
     <ClCompile Include="Scripts\ResourceManager\MusicResource.cpp" />
     <ClCompile Include="Scripts\ResourceManager\ResourceManager.cpp" />
     <ClCompile Include="Scripts\ResourceManager\TextResource.cpp" />
@@ -41,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scripts\GSM\FailLevel.h" />
+    <ClInclude Include="Scripts\Components\PlayerComp2.h" />
     <ClInclude Include="Scripts\GSM\Score.h" />
     <ClInclude Include="Scripts\ComponentManager\EngineManager.h" />
     <ClInclude Include="Scripts\ComponentManager\EventManger.h" />
@@ -87,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\GameObject\GameObject.inl" />
+    <None Include="test.json" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Scripts\RTTI\RTTI.txt" />

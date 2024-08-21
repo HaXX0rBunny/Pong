@@ -12,6 +12,7 @@
 #include "../ResourceManager/ResourceManager.h"
 #include "../Serializer/Serializer.h"
 #include "../GameObject/GOManager.h"
+#include "../Components/PlayerComp2.h"
 void Levels::MainLevel::Init()
 {
    
@@ -26,7 +27,7 @@ void Levels::MainLevel::Init()
     TransformComp* playerTransform_m = new TransformComp(player_m);
     SpriteComp* playerSprite_m = new SpriteComp(player_m);
     RigidbodyComp* playerRigidBody_m = new RigidbodyComp(player_m);
-    PlayerComp* playerMove_m = new PlayerComp(player_m);
+    PlayerComp2* playerMove_m = new PlayerComp2(player_m);
     //ping[0] = new GameObject();
     //ping[1] = new GameObject();
     //Wall = new GameObject();
@@ -68,7 +69,7 @@ void Levels::MainLevel::Init()
 
     planet->AddComponent(planetTransform);
     planet->AddComponent(planetSprite);
-//    RsrMgr.Clear();
+	//    RsrMgr.Clear();
     planetTransform->SetPos({ 0, 0 });
     planetTransform->SetScale({ 40, 40 });
     //Serializer *s= Serializer::Instance();
@@ -85,6 +86,12 @@ void Levels::MainLevel::Update()
     SpriteComp* spr = planet->GetComponent<SpriteComp>();
     AudioComp* audio = player->GetComponent<AudioComp>();
     AEGfxMeshStart();
+    if (trs)
+    {
+        trs->SetPos({ trs->GetPos().x + 5, trs->GetPos().y });
+
+
+    }
     //if (trs)
     //{
     //    trs->SetPos({ trs->GetPos().x +1, trs->GetPos().y });
@@ -131,8 +138,8 @@ void Levels::MainLevel::Update()
 void Levels::MainLevel::Exit()
 {
 	std::cout << "Main level Exit" << std::endl;
-    Serializer* s = Serializer::Instance();
-    s->SaveLevel("test.json");
+    //Serializer* s = Serializer::Instance();
+    //s->SaveLevel("test.json");
 
     GOManager::Instance()->Clear();
 
