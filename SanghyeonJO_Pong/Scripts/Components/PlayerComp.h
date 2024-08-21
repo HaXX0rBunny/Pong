@@ -5,7 +5,7 @@ class PlayerComp : public LogicComponent
 {
 	float moveSpeed;
 	float spin;
-	int worldLimit;
+	float worldLimit;
 public:
 	PlayerComp(GameObject* owner);
 	~PlayerComp();

@@ -28,13 +28,7 @@ void Levels::MainLevel::Init()
     SpriteComp* playerSprite_m = new SpriteComp(player_m);
     RigidbodyComp* playerRigidBody_m = new RigidbodyComp(player_m);
     PlayerComp2* playerMove_m = new PlayerComp2(player_m);
-    //ping[0] = new GameObject();
-    //ping[1] = new GameObject();
-    //Wall = new GameObject();
-    //TransformComp* PingTransform = new TransformComp(ping[0]);
-    //SpriteComp* PingSprite = new SpriteComp(ping[0]);
-    //TransformComp* Ping2Transform = new TransformComp(ping[1]);
-    //SpriteComp* Ping2Sprite = new SpriteComp(ping[1]);
+
     player->AddComponent(playerTransform);
     player->AddComponent(playerSprite);
     player->AddComponent(playerRigidBody);
@@ -50,31 +44,19 @@ void Levels::MainLevel::Init()
     playerTransform->SetScale({ 20, 200 });
 
     ResourceManager* RsrMgr = ResourceManager::Instance();
-    //TextResource* TextRsr = RsrMgr->Get<TextResource>("../../Assets/ame.png");
-    //TextResource* planetTextRsr = RsrMgr->Get<TextResource>("../../Assets/hos.png");
-    //MusicResource* AudioRsr = RsrMgr->Get<MusicResource>("../../Assets/bouken.mp3");
-
-    //playerSprite->SetTexture(static_cast<AEGfxTexture*>(TextRsr->GetData()));
-    //playerAudio->SetAudio(static_cast<AEAudio*>(AudioRsr->GetData()));
-
-
-
-    planet = new GameObject();
-    
-
+	planet = new GameObject();
 
     TransformComp* planetTransform = new TransformComp(planet);
     SpriteComp* planetSprite = new SpriteComp(planet);
-    //planetSprite->SetTexture(static_cast<AEGfxTexture*>(planetTextRsr->GetData()));
+    RigidbodyComp* planetRigid = new RigidbodyComp(planet);
 
     planet->AddComponent(planetTransform);
     planet->AddComponent(planetSprite);
+    planet->AddComponent(planetRigid);
 	//    RsrMgr.Clear();
     planetTransform->SetPos({ 0, 0 });
     planetTransform->SetScale({ 40, 40 });
-    //Serializer *s= Serializer::Instance();
-    //s->LoadLevel("test.json");
-   
+    planetRigid->AddVelocity(600, 0);
     std::cout << "Main level Init" << std::endl;
     
 }
@@ -86,12 +68,7 @@ void Levels::MainLevel::Update()
     SpriteComp* spr = planet->GetComponent<SpriteComp>();
     AudioComp* audio = player->GetComponent<AudioComp>();
     AEGfxMeshStart();
-    if (trs)
-    {
-        trs->SetPos({ trs->GetPos().x + 5, trs->GetPos().y });
-
-
-    }
+    //if (trs){trs->SetPos({ trs->GetPos().x + 5, trs->GetPos().y });}
     //if (trs)
     //{
     //    trs->SetPos({ trs->GetPos().x +1, trs->GetPos().y });

@@ -1,25 +1,40 @@
 #pragma once
-#include "../Components/EngineComponent.h"
-#include <string>
+#include "EngineComponent.h"
 
-#include "AEVec2.h"
-
-class CollisionComp : public EngineComponent
-{
-	AEVec2 x, y; // 중심 좌표
-	AEVec2 halfWidth, halfHeight; // 반 너비, 반 높이
-	CollisionComp();
-	~CollisionComp();
-	void SetAABB(float x, float y, float halfWidth, float halfHeight);
-	void SetCircle(float x, float y, float radius);
-
-	bool CheckCollision(const CollisionComp& other) const;
-	void ResolveCollision(CollisionComp& other);
-
-	std::string GetType() {
-		return "CollisionComp";
-	}
-	int CollisionInterSection();
-	virtual void LoadFromJson(const json& data) = 0;
+struct AABB {
+    float x, y; // 중심 좌표
+    float halfWidth, halfHeight; // 반 너비, 반 높이
 };
-		
+
+struct Circle {
+    float x, y; // 중심 좌표
+    float radius; // 반지름
+};
+
+class CollisionComp : public EngineComponent{
+public:
+    CollisionComp();
+
+    void SetAABB(float x, float y, float halfWidth, float halfHeight);
+    void SetCircle(float x, float y, float radius);
+
+    bool CheckCollision(const CollisionComp& other) const;
+    void ResolveCollision(CollisionComp& other);
+
+private:
+    enum CollisionType {
+        None,
+        AABBType,
+        CircleType
+    };
+
+    CollisionType type;
+    AABB aabb;
+    Circle circle;
+
+    bool CheckCollisionAABB(const AABB& box1, const AABB& box2) const;
+    void ResolveCollisionAABB(AABB& box1, AABB& box2) const;
+
+    bool CheckCollisionCircle(const Circle& circle1, const Circle& circle2) const;
+    void ResolveCollisionCircle(Circle& circle1, Circle& circle2) const;
+};

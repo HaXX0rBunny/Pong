@@ -30,7 +30,7 @@ public:
         return Instance_;
     }
 
-    static void clear() {
+    static void Clear() {
         if (Instance_) {
             delete Instance_;
             Instance_ = nullptr;
@@ -82,4 +82,5 @@ private:
     std::map<std::string, std::list<Entity*>> registeredEntities;
 };
 
+// ΩÃ±€≈Ê ¿ŒΩ∫≈œΩ∫ √ ±‚»≠
 EventManager* EventManager::Instance_ = nullptr;

@@ -38,6 +38,10 @@ void PlayerComp::Update()
 				t->SetPos({ t->GetPos().x, t->GetPos().y - moveSpeed });
 
 			}
+			if (t->GetPos().y >= worldLimit)
+				t->SetPos(AEVec2{ t->GetPos().x, worldLimit - 1 });
+			else if (t->GetPos().y <= -worldLimit)
+				t->SetPos(AEVec2{ t->GetPos().x, -worldLimit + 1 });
 		}
 		
 	}
