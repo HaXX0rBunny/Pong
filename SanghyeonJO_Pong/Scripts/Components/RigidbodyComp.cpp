@@ -36,6 +36,17 @@ void RigidbodyComp::AddVelocity(float x, float y)
 	AEClamp(Velocity.y, -MaxVelocity.y, MaxVelocity.y);
 }
 
+AEVec2 RigidbodyComp::GetVelocity()
+{
+	return Velocity;
+}
+
+void RigidbodyComp::SetVelocity(float x, float y)
+{
+	Velocity.x = x;
+	Velocity.y = y;
+}
+
 void RigidbodyComp::ClearVelocity()
 {
 	Velocity.x = 0;

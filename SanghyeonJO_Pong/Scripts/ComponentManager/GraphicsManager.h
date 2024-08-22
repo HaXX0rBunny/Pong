@@ -3,17 +3,17 @@
 #include <vector>
 class GraphicsManager
 {
-    static GraphicsManager* Instance_;
+    static std::unique_ptr<GraphicsManager> Instance_;
     std::vector<GraphicsComponent*> Component;
-    ~GraphicsManager();
+
 public:
-    static GraphicsManager* Instance()
-    {
-        if (!Instance_)
-            Instance_ = new GraphicsManager();
-        return Instance_;
+    static GraphicsManager* Instance() {
+        if (!Instance_) {
+            Instance_ = std::make_unique<GraphicsManager>();
+        }
+        return Instance_.get();
     }
-    //void Render();
+    ~GraphicsManager();
     void clear();
     GraphicsComponent* GetComponent(const std::string& str) const;
     void AddComponent(GraphicsComponent* component);

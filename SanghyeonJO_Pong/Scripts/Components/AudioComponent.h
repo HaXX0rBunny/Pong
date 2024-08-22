@@ -25,7 +25,7 @@ public:
 	void SetAudio(AEAudio* audio);
 	void Play(); // 재생 메서드 추가
 	bool IsPlaying() const; // 재생 상태 확인 메서드 추가
-	void LoadFromJson(const json& data)override;
+	auto LoadFromJson(const json& data) -> void override;
 
 	json SaveToJson()override;
 	static BaseRTTI* CreateAudioComp();

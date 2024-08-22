@@ -1,7 +1,6 @@
 #include "LogicManager.h"
 
-LogicManager* LogicManager::Instance_ = nullptr;  
-
+std::unique_ptr<LogicManager> LogicManager::Instance_ = nullptr;
 LogicManager::~LogicManager()
 {
     clear();

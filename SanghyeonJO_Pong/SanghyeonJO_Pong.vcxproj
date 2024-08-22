@@ -12,18 +12,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scripts\ComponentManager\EngineManager.cpp" />
-    <ClCompile Include="Scripts\ComponentManager\Functors.cpp" />
     <ClCompile Include="Scripts\ComponentManager\GraphicsManager.cpp" />
     <ClCompile Include="Scripts\ComponentManager\LogicManager.cpp" />
     <ClCompile Include="Scripts\Components\AudioComponent.cpp" />
-    <ClCompile Include="Scripts\Components\CollisionComp.cpp" />
     <ClCompile Include="Scripts\Components\EngineComponent.cpp" />
     <ClCompile Include="Scripts\Components\GraphicsComponent.cpp" />
     <ClCompile Include="Scripts\Components\LogicComponent.cpp" />
     <ClCompile Include="Scripts\Components\PlayerComp.cpp" />
     <ClCompile Include="Scripts\Components\RigidbodyComp.cpp" />
     <ClCompile Include="Scripts\Components\SpriteComp.cpp" />
-    <ClCompile Include="Scripts\Components\CollisionComp.h" />
     <ClCompile Include="Scripts\Components\TransformComp.cpp" />
     <ClCompile Include="Scripts\GameObject\GameObject.cpp" />
     <ClCompile Include="Scripts\GameObject\GOManager.cpp" />
@@ -41,11 +38,11 @@
     <ClCompile Include="Scripts\Serializer\Serializer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Scripts\ComponentManager\EventManager.h" />
     <ClInclude Include="Scripts\GSM\FailLevel.h" />
     <ClInclude Include="Scripts\Components\PlayerComp2.h" />
     <ClInclude Include="Scripts\GSM\Score.h" />
     <ClInclude Include="Scripts\ComponentManager\EngineManager.h" />
-    <ClInclude Include="Scripts\ComponentManager\EventManger.h" />
     <ClInclude Include="Scripts\ComponentManager\GraphicsManager.h" />
     <ClInclude Include="Scripts\ComponentManager\LogicManager.h" />
     <ClInclude Include="Scripts\Components\AudioComponent.h" />

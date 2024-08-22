@@ -1,3 +1,4 @@
+#pragma once
 #include "AEMath.h"
 #include "AEVec2.h"
 

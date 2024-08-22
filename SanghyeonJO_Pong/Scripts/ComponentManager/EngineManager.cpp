@@ -1,5 +1,5 @@
 #include "EngineManager.h"
-EngineManager* EngineManager::Instance_ = nullptr; 
+std::unique_ptr<EngineManager> EngineManager::Instance_ = nullptr;
 
 EngineManager::~EngineManager()
 {
@@ -12,7 +12,6 @@ EngineManager::~EngineManager()
 
 void EngineManager::clear()
 {
-
     if (Instance_) {
         delete Instance_;
         Instance_ = nullptr;

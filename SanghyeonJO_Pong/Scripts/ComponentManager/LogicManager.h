@@ -3,16 +3,18 @@
 #include <vector>
 class LogicManager
 {
-    static LogicManager* Instance_;
+    static std::unique_ptr<LogicManager> Instance_;
     LogicManager() = default;
     std::vector<LogicComponent*> Component;
-    ~LogicManager();
+
 public:
     static LogicManager* Instance() {
-        if (Instance_ == nullptr)
-            Instance_ = new LogicManager;
-        return Instance_;
+        if (!Instance_) {
+            Instance_ = std::make_unique<LogicManager>();
+        }
+        return Instance_.get();
     }
+    ~LogicManager();
     static void clear();
     LogicComponent* GetComponent(const std::string& str) const;
     void AddComponent(LogicComponent* component);

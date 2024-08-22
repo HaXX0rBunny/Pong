@@ -81,12 +81,18 @@
     <ClCompile Include="Scripts\Serializer\Serializer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Scripts\GSM\FailLevel.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GSM\MainMenu.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Components\PlayerComp2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scripts\ComponentManager\EngineManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scripts\ComponentManager\EventManger.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Scripts\ComponentManager\GraphicsManager.h">
@@ -185,9 +191,6 @@
     <ClInclude Include="Scripts\GSM\MainLevel.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scripts\MManager\MessageManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Scripts\ResourceManager\MusicResource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -209,14 +212,48 @@
     <ClInclude Include="Scripts\Serializer\Serializer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Scripts\GSM\FailLevel.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Components\PlayerComp2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GSM\Score.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GSM\MainMenu.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\ComponentManager\EventManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\GameObject\GameObject.inl">
       <Filter>헤더 파일</Filter>
     </None>
+    <None Include="test.json" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Scripts\RTTI\RTTI.txt" />
     <Text Include="Scripts\Serializer\json.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\bouken.mp3" />
+    <Media Include="Assets\ore.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\ame.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Assets\hos.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Assets\PlanetTexture.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\liberation-mono.ttf" />
   </ItemGroup>
 </Project>

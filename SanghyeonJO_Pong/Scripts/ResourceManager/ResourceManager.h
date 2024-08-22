@@ -46,24 +46,24 @@ enum FileExt
 
 class ResourceManager
 {
-	static ResourceManager* Instance_;
+	static std::unique_ptr<ResourceManager> Instance_;
 	ResourceManager() {};
 	ResourceManager(const ResourceManager& other) = delete;
 	const ResourceManager& operator= (const ResourceManager& other) = delete;
-	~ResourceManager();
+
 	std::map<std::string, Resource*> container;
 	FileExt GetFileExt(const std::string& filename);
 public:
 	static ResourceManager* Instance()
 	{
 		if (Instance_ == nullptr)
-			Instance_ = new ResourceManager;
-		return Instance_;
+			Instance_ = std::make_unique<ResourceManager>();
+		return Instance_.get();
 	}
 	
 	template <typename T>
 	T* Get(const std::string& filename);
-
+	~ResourceManager();
 	void UnloadResource(const std::string& filename);
 	void Clear();
 	//Singleton

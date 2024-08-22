@@ -1,5 +1,5 @@
 #include "ResourceManager.h"
-ResourceManager* ResourceManager::Instance_ = nullptr;
+std::unique_ptr<ResourceManager> ResourceManager::Instance_ = nullptr;
 ResourceManager::~ResourceManager()
 {
     Clear();

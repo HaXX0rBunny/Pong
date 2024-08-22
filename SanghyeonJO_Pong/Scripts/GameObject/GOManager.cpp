@@ -1,5 +1,5 @@
 #include "GOManager.h"
-GOManager* GOManager::Instance_=nullptr;
+std::unique_ptr<GOManager> GOManager::Instance_= nullptr;
 GOManager::~GOManager()
 {
 	Clear();
